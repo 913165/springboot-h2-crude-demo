@@ -14,6 +14,7 @@ public class BookController {
     private BookService bookService;
 
     // get all books with endpoint /books
+    @CrossOrigin(origins = "*")
     @GetMapping("/books")
     public List<Book> getAllBooks() {
         return bookService.getAllBooks();
@@ -41,5 +42,11 @@ public class BookController {
     @DeleteMapping("/books/{id}")
     public void deleteBook(@PathVariable Long id) {
         bookService.deleteBook(id);
+    }
+
+    // some test code with query parameter
+    @GetMapping("/books/test")
+    public String test(@RequestParam("name") String name) {
+        return "Hello " + name;
     }
 }
