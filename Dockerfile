@@ -3,8 +3,8 @@ FROM openjdk:22-ea-1
 # set the working directory in the container
 WORKDIR /app
 
-ENV USERNAME=${USERNAME}
-ENV PASSWORD=${PASSWORD}
+ENV USERNAME=root
+ENV PASSWORD=root123
 
 # copy the dependencies file to the working directory
 COPY target/*.jar /app/PBooksApp.jar
